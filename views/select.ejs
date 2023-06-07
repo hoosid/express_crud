@@ -1,0 +1,39 @@
+<!-- select.ejs -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>User List</title>
+</head>
+<body>
+  <h1 style="color: aqua; font-weight: 100;">User List</h1>
+  <table border="1">
+    <tr>
+      <th>ID</th>
+      <th>Name</th>
+      <th>prenom</th>
+      <td colspan="2">option</td>
+      <td>
+       <button><a href="/sid">add</a></button> 
+      </td>
+    </tr>
+    
+    <% select.forEach((user) => { %>
+      <tr>
+        <td><%= user.id %></td>
+        <td><%= user.name %></td>
+        <td><%= user.prenom %></td>
+        <td >
+          <button><a href="/del/<%= user.id %>">delect</a></button>
+        </td>
+        <td >
+         <button><a href="/edit/<%= user.id %>">update</a></button>
+        </td>
+      </tr>
+    <% }); %>
+  </table>  
+</body>
+</html>
+
